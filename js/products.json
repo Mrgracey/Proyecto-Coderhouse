@@ -1,0 +1,162 @@
+[
+    {
+        "id": 0, 
+        "name": "Air Force 1", 
+        "price": 16000,
+        "options": 
+        [
+            {
+                "stock": 16,
+                "sizes": 
+                [
+                    {
+                        "size": "7", 
+                        "colors": 
+                        [
+                            "green",
+                            "blue"
+                        ]
+                    }, 
+                    {
+                        "size": "8",
+                        "colors": 
+                        [
+                            "green",
+                            "black"
+                        ]
+                    }
+                ]
+            },
+            {}
+        ], 
+        "img": "af1.png" 
+    },
+    {
+        "id": 1, 
+        "name": "Jordan", 
+        "price": 12000,
+        "options": 
+        [
+            {
+                "stock": 16,
+                "sizes": 
+                [
+                    {
+                        "size": "7", 
+                        "colors": 
+                        [
+                            "green",
+                            "blue"
+                        ]
+                    }, 
+                    {
+                        "size": "8",
+                        "colors": 
+                        [
+                            "green",
+                            "black"
+                        ]
+                    }
+                ]
+            },
+            {}
+        ], 
+        "img": "j.png" 
+    },
+    {
+        "id": 2, 
+        "name": "Dunk Low", 
+        "price": 8000,
+        "options": 
+        [
+            {
+                "stock": 16,
+                "sizes": 
+                [
+                    {
+                        "size": "7", 
+                        "colors": 
+                        [
+                            "green",
+                            "blue"
+                        ]
+                    }, 
+                    {
+                        "size": "8",
+                        "colors": 
+                        [
+                            "green",
+                            "black"
+                        ]
+                    }
+                ]
+            },
+            {}
+        ], 
+        "img": "dl.png" 
+    },
+    {
+        "id": 3, 
+        "name": "Jordan High", 
+        "price": 2000,
+        "options": 
+        [
+            {
+                "stock": 16,
+                "sizes": 
+                [
+                    {
+                        "size": "7", 
+                        "colors": 
+                        [
+                            "green",
+                            "blue"
+                        ]
+                    }, 
+                    {
+                        "size": "8",
+                        "colors": 
+                        [
+                            "green",
+                            "black"
+                        ]
+                    }
+                ]
+            },
+            {}
+        ], 
+        "img": "jh.png" 
+    },
+    {
+        "id": 4, 
+        "name": "Air Max", 
+        "price": 1000,
+        "options": 
+        [
+            {
+                "stock": 16,
+                "sizes": 
+                [
+                    {
+                        "size": "7", 
+                        "colors": 
+                        [
+                            "green",
+                            "blue"
+                        ]
+                    }, 
+                    {
+                        "size": "8",
+                        "colors": 
+                        [
+                            "green",
+                            "black"
+                        ]
+                    }
+                ]
+            },
+            {}
+        ], 
+        "img": "am.png" 
+    }
+]
