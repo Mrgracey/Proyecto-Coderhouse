@@ -299,7 +299,7 @@ header .logo{
 }
 
 
-#closeCart{
+.closeCart{
     width: 100%;
     text-align: right;
     background-color: rgba(255, 255, 255, 0);
@@ -309,7 +309,7 @@ header .logo{
     transition: ease-out;
     transition-duration: .5s;
 }
-#closeCart:hover{
+.closeCart:hover{
     color: rgb(196, 35, 35);
 }
 
@@ -344,6 +344,27 @@ header .logo{
 }
 
 #buyCart:hover{
+    background-color: rgba(0,0,0,.75);
+}
+
+
+#submitForm{
+    border: rgba(255, 255, 255, 0) solid 3px;
+    display: none;
+    padding: 10px 20px;
+    background: var(--black-text);
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 200;
+    letter-spacing: 2px;
+    color: var(--white);
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 20px;
+}
+
+#submitForm:hover{
     background-color: rgba(0,0,0,.75);
 }
 
@@ -745,14 +766,27 @@ section img{
     height: 110vh;
 }
 
+#checkoutForm{
+    display: none;
+}
 
-@keyframes openCart-enter {
-	0% {
-        display: none;
-		transform: translateY(-20px);
-	}
-	100% {
-        display: block;
-		transform: translateY(0px);
-	}
+#checkoutForm label{
+    font-size: 1.2em;
+    margin: 15px 0px 0px 0px;
+}
+
+
+#goBack{
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    font-size: 2em;
+    color: var(--black-text);
+    transition: ease-out;
+    transition-duration: .5s;
 }

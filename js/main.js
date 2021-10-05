@@ -2,7 +2,27 @@
 $( document ).ready(function() {
     $( "#overlayer" ).attr("style", "display: none;");    
     $( ".loader" ).attr("style", "display: none;");
+    
 });
+
+function submitForm(){
+    var name=('#name').val;
+    var email=('#mail').val;
+    var message=('#message').val;
+    var dataString = {"name": name, "email":email, "message":message}
+
+    $.ajax({
+        url: 'js/action.js',
+        type: 'get',
+        data: dataString,
+        success: function() { //we got the response
+            // $("#formResult").html(result);
+        },
+        error: function(jqxhr, status, exception) {
+            console.log('Exception:', exception);
+        }
+    });
+}
 
 class Product {
     constructor(object) {
@@ -32,7 +52,6 @@ let spanSizes = '';
 let productDiv = document.getElementsByClassName('row');
 let productButton = document.getElementsByClassName("product");
 let cantItemsInCart = 0;
-
     for (const product of products){
         for (const option of product.options){
             if (option.stock>0) {
@@ -48,7 +67,6 @@ let cantItemsInCart = 0;
             
         }
         ivaPrice = product.price * 1.21;
-        // productDiv[0].innerHTML = productDiv[0].innerHTML + `<div class="product-card"> <h2>${product.name}</h2> <p>${ivaPrice}AR$</p> <button id="${product.id}" class="product">añadir al carrito</button> </div>`;
         productDiv[1].innerHTML = productDiv[1].innerHTML + `<div class="col-lg-4">
                                                                 <div id="${product.id}" class="card">
                                                                     <div class="imgBx">
@@ -70,7 +88,7 @@ let cantItemsInCart = 0;
         spanColors = '';
         spanSizes = '';
         
-}
+    }
 
 
 
@@ -227,7 +245,6 @@ const sizeSpanClasses = function() {
     var size1 = $(".sizeSpan.selected").html();
     var cardId1 = $(".sizeSpan.selected").parent().parent().parent().attr('id');
     if (size1 != undefined) {
-        // console.log(size1);
         var color1 = ".color." + size1;
         $(color1).attr("style", "height: 0px;padding: 0px;visibility:hidden;opacity:0;");
         $(`#${cardId1}`).mouseenter(function(){
@@ -273,7 +290,6 @@ const imgSlider = function() {
 const deleteItem = function(){
 
     var itemId = $(this).parent().parent().parent().attr('id');
-    console.log(itemId)
     parseCart();
     A_cartProducts.splice(itemId, 1);
     localSave("cartList", JSON.stringify(A_cartProducts));
@@ -283,15 +299,39 @@ const deleteItem = function(){
     
 }
 
+const goBack = function(){
+    $('#buyCart').attr('style', 'display: inline-block');
+    $('#submitForm').attr('style', 'display: none');
+    $('#cartProducts').attr('style', 'display: flex');
+    $('#checkoutForm').attr('style', 'display: none');
+    $('#deleteCart').attr('style', 'display: block');
+    $('#goBack').attr('style', 'display: none');
+}
+
+
 printCart(command); 
 $(".itemDelete").click(deleteItem);
 $(".product").click(putInCart);
 $("#openCart").click(openCart);
-$("#closeCart").click(closeCart);
+$(".closeCart").click(closeCart);
 $("#deleteCart").click(emptyCart);
 $("#sortCart").click(sortCart);
 $(".sizeSpan").click(sizeSpanClasses);
 $(".colorSpan").click(colorSpanClasses);
+$("#goBack").click(goBack);
+$("#submitForm").click(function(e){
+    e.preventDefault();
+    submitForm();
+});
+
+$("#buyCart").click(function(){
+    $('#buyCart').attr('style', 'display: none');
+    $('#submitForm').attr('style', 'display: inline-block');
+    $('#cartProducts').attr('style', 'display: none');
+    $('#checkoutForm').attr('style', 'display: flex');
+    $('#deleteCart').attr('style', 'display: none');
+    $('#goBack').attr('style', 'display: block');
+})
 $(".colorSpan").click(function(){
     var clickedCardId = $(this).parent().parent().parent().attr('id');
     $(`#${clickedCardId} .product`).attr("style", "pointer-events: auto; cursor: pointer;")
@@ -303,6 +343,7 @@ $("#more").click(function() {
         scrollTop: $("#catalog").offset().top
     }, 2000);
 });
+
 
 var mybutton = document.getElementById("openCart");
 

@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="js/all.min.js"></script>
     <script src="js/jquery-3.6.0.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -61,7 +62,7 @@
             </div>
         </div>
         <div class="cart">
-            <div class="row">
+            <div id="cartProducts" class="row">
                 
                 <div class="col-lg-10">
                     <div class="cartItems">
@@ -70,15 +71,34 @@
                 </div>
                 <div class="col-lg-2">
                     <button id="sortCart"><i class="fas fa-sort-amount-down-alt"></i></button>
-                    <button id="closeCart"><i class="fas fa-times"></i></button>
+                    <button class="closeCart"><i class="fas fa-times"></i></button>
                 </div>
             </div>
-            
-            
+            <div id="checkoutForm" class="row">
+                
+                <div class="col-lg-10">
+                    <form >
+                        <label>Nombre:</label>
+                        <input type="text" placeholder="Juan Peréz" id="name">
+                        <label>Mail:</label>
+                        <input type="text" placeholder="juanperez@mail.com" id="mail">
+                        <label>Dirección:</label>
+                        <input type="text" placeholder="Av. Olazábal 2311" id="address">
+                        
+                    </form>
+                </div>
+                <div class="col-lg-2">
+                    <button class="closeCart"><i class="fas fa-times"></i></button>
+                </div>
+                
+            </div>
+            <button id="submitForm" type="submit">Finalizar compra</button>
             <button id="deleteCart"><i class="fas fa-trash"></i></button>
-            <button id="buyCart" type="submit">Finalizar compra</button>
+            <button id="goBack"><i class="fas fa-chevron-left"></i></button>
+            <button id="buyCart" type="submit">Siguiente paso</button>
     
         </div>
+
     </div>
     
     <button id="openCart"><i class="fas fa-shopping-cart"></i><span id="itemsInCart"><p>1</p></span></button>
